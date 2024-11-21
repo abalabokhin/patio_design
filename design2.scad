@@ -10,8 +10,8 @@ module block(height, width, depth)
 	}
 }
 
-slab_w = 130;
-slab_h = 103;
+slab_w = 192;
+slab_h = 140;
 slab_d = 4;
 post_h = 96;
 post_hr = 95.99;
@@ -20,7 +20,7 @@ post_wr = 5.99;
 base_h = 2;
 post_slab_edge_offset = 0;
 horizontal_post_overlap = 10;
-house_wall_h = 130;
+house_wall_h = 112;
 house_wall_d = 1;
 
 // create 2 by 6 as a base
@@ -37,4 +37,4 @@ color("yellow")translate([slab_h-post_slab_edge_offset-post_w,slab_w - post_w-po
 //create horizontal post on top of three main posts
 color("brown")translate([slab_h-post_slab_edge_offset-post_w,-horizontal_post_overlap,post_h-post_w])block(post_w, slab_w+horizontal_post_overlap*2, post_w); 
 //create wall of the house
-color("red")translate([-house_wall_d, -house_wall_h * 0.5, 0])block(house_wall_d, house_wall_h*2, house_wall_h); 
+color("red")translate([-house_wall_d, -house_wall_h * 0.5, 0])block(house_wall_d, slab_w*2, house_wall_h); 
