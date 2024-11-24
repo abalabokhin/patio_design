@@ -1,3 +1,11 @@
+/* materials:
+2 baseboards: 2x8x20 2шт = $22 * 2
+rafters: 2x8x12 10шт = $9.18*10
+posts: 6x6x8, 4шт = $32*4
+posts base 4шт = $54
+osb 7 шт... = 
+*/
+
 // everything is in inches
 
 //create a block
@@ -25,7 +33,7 @@ wood_d = 2;
 roof_rafter_spacing = 24;
 roof_rafter_size = 8;
 roof_rafter_cut = 1;
-roof_rafter_overlap = 10;
+roof_rafter_overlap = 12;
 
 
 // create slab and 3 main posts
@@ -55,4 +63,5 @@ rafter_n = baseboard_l/roof_rafter_spacing + 1;
 for (i = [0:1:rafter_n]) {
 color("blue")translate([wood_d,min(baseboard_offset + i * roof_rafter_spacing, baseboard_l+baseboard_offset-wood_d),house_wall_h-baseboard_w])rotate([0,roof_angle,0])block(rafter_l,wood_d,roof_rafter_size);
 }
+
 
