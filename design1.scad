@@ -18,6 +18,8 @@ module block(height, width, depth)
 	}
 }
 
+//projection(cut=false);
+
 slab_w = 192;
 slab_h = 140;
 slab_d = 4;
@@ -37,12 +39,17 @@ roof_rafter_overlap = 12;
 
 
 // create slab and 3 main posts
-color("grey")translate([0,0,-slab_d])block(slab_h, slab_w, slab_d); 
+color("grey")translate([0,0,-slab_d])block(slab_h, slab_w, slab_d);
+
+for (i = [0:1:3]) {
+color("yellow")translate([slab_h-post_slab_edge_offset-post_w,post_slab_edge_offset+(slab_w-post_slab_edge_offset*2-post_w)/3*i,0])block(post_w, post_w, post_h);
+}
+/*
 color("yellow")translate([slab_h-post_slab_edge_offset-post_w,post_slab_edge_offset,0])block(post_w, post_w, post_h); 
 color("yellow")translate([slab_h-post_slab_edge_offset-post_w,slab_w/3-post_w/2,0])block(post_w, post_w, post_h); 
 color("yellow")translate([slab_h-post_slab_edge_offset-post_w,slab_w/3*2-post_w/2,0])block(post_w, post_w, post_h); 
 color("yellow")translate([slab_h-post_slab_edge_offset-post_w,slab_w - post_w-post_slab_edge_offset,0])block(post_w, post_w, post_h); 
-
+*/
 baseboard_l = slab_w-post_slab_edge_offset*2+horizontal_post_overlap*2;
 baseboard_offset = post_slab_edge_offset-horizontal_post_overlap;
 //create horizontal post on top of main posts
