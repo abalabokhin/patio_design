@@ -47,8 +47,7 @@ color("red")translate([-house_wall_d, -house_wall_h * 0.5, 0])block(house_wall_d
 
 module baseboard() 
 {
-//create wall of the house
-color("red")translate([-house_wall_d, -house_wall_h * 0.5, 0])block(house_wall_d, slab_w*2, house_wall_h); 
+color("green")translate([0,baseboard_offset-baseboard_overlap,house_wall_h-baseboard_w])block(wood_d, baseboard_l_real, baseboard_w);
 }
 
 module rafters() 
@@ -57,8 +56,6 @@ for (i = [0:1:rafter_n]) {
   color("blue")translate([wood_d,min(baseboard_offset + i * roof_rafter_spacing, baseboard_l+baseboard_offset-wood_d),house_wall_h-baseboard_w])rotate([0,roof_angle,0])block(rafter_l,wood_d,roof_rafter_size);
 }
 }
-
-//projection(cut=false);
 
 slab_w = 192;
 slab_h = 140;
@@ -89,12 +86,14 @@ rafter_horizontal_l = slab_h - post_slab_edge_offset - wood_d;
 rafter_l = rafter_horizontal_l / cos(roof_angle) + roof_rafter_overlap;
 rafter_n = baseboard_l/roof_rafter_spacing + 1;
 
+projection(cut=false) {
 slab();
 posts();
 posts_board();
 wall();
 baseboard();
 rafters();
+}
 
 // create roof rafters
 
