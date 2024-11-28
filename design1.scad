@@ -86,16 +86,38 @@ rafter_horizontal_l = slab_h - post_slab_edge_offset - wood_d;
 rafter_l = rafter_horizontal_l / cos(roof_angle) + roof_rafter_overlap;
 rafter_n = baseboard_l/roof_rafter_spacing + 1;
 
+
 projection(cut=false) {
-slab();
+//slab();
 posts();
 posts_board();
-wall();
+//wall();
 baseboard();
 rafters();
 }
 
-// create roof rafters
 
+projection(cut=false) {
+translate([0,-50,0])
+rotate([90, 0, 0]) {
+slab();
+posts();
+posts_board();
+//wall();
+baseboard();
+rafters();
+}
+}
 
+projection(cut=false) {
+translate([-130,0,0])
+rotate([0, 90, 0]) {
+slab();
+posts();
+posts_board();
+//wall();
+//baseboard();
+//rafters();
+}
+}
 
