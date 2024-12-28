@@ -61,18 +61,18 @@ slab_w = 192;
 slab_h = 140;
 slab_d = 4;
 post_h = 96;
-post_w = 6;
+post_w = 5.5;
 post_slab_edge_offset = 6;
 horizontal_post_overlap = 12;
 house_wall_h = 112;
 house_wall_d = 1;
-baseboard_w = 8;
+baseboard_w = 7.25;
 baseboard_overlap = 1;
-wood_d = 2;
+wood_d = 1.5;
 epsilon = 0.01;
 
 roof_rafter_spacing = 24;
-roof_rafter_size = 8;
+roof_rafter_size = 7.25;
 roof_rafter_cut = 1;
 roof_rafter_overlap = 12;
 
@@ -86,7 +86,14 @@ rafter_horizontal_l = slab_h - post_slab_edge_offset - wood_d;
 rafter_l = rafter_horizontal_l / cos(roof_angle) + roof_rafter_overlap;
 rafter_n = baseboard_l/roof_rafter_spacing + 1;
 
+slab();
+posts();
+posts_board();
+//wall();
+baseboard();
+rafters();
 
+/*
 projection(cut=false) {
 //slab();
 posts();
@@ -120,4 +127,4 @@ posts_board();
 //rafters();
 }
 }
-
+*/
