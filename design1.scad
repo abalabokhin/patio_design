@@ -57,24 +57,26 @@ for (i = [0:1:rafter_n]) {
 }
 }
 
-slab_w = 192;
-slab_h = 140;
-slab_d = 4;
-post_h = 96;
-post_w = 5.5;
-post_slab_edge_offset = 6;
-horizontal_post_overlap = 12;
-house_wall_h = 112;
-house_wall_d = 1;
-baseboard_w = 7.25;
-baseboard_overlap = 1;
-wood_d = 1.5;
+length_factor = 25.4;
+
+slab_w = 192 * length_factor;
+slab_h = 140 * length_factor;
+slab_d = 4 * length_factor;
+post_h = 96 * length_factor;
+post_w = 5.5 * length_factor;
+post_slab_edge_offset = 6 * length_factor;
+horizontal_post_overlap = 12 * length_factor;
+house_wall_h = 112 * length_factor;
+house_wall_d = 1 * length_factor;
+baseboard_w = 7.25 * length_factor;
+baseboard_overlap = 1 * length_factor;
+wood_d = 1.5 * length_factor;
 epsilon = 0.01;
 
-roof_rafter_spacing = 24;
-roof_rafter_size = 7.25;
-roof_rafter_cut = 1;
-roof_rafter_overlap = 12;
+roof_rafter_spacing = 24 * length_factor;
+roof_rafter_size = 7.25 * length_factor;
+roof_rafter_cut = 1 * length_factor;
+roof_rafter_overlap = 12 * length_factor;
 
 baseboard_l = slab_w-post_slab_edge_offset*2+horizontal_post_overlap*2;
 baseboard_l_real = slab_w-post_slab_edge_offset*2+horizontal_post_overlap*2+baseboard_overlap *2;
